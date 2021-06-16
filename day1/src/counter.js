@@ -11,3 +11,5 @@ function addCounter() {
 
     document.getElementsByTagName("body")[0].append(counterElement);
 }
+
+export default addCounter;
