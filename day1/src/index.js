@@ -1,3 +1,7 @@
-import addCounter from "./counter.js";
+import { Counter } from "./components/counter.js";
+import addBackgroundImage from "./image.js";
 
-addCounter();
+const counter = new Counter();
+counter.render();
+
+addBackgroundImage();
