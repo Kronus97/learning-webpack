@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Eina01';
+    src: url('./fonts/Eina01-Regular.ttf');
+}
+
+body, div, span, input {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 1rem);
+}
+
+body * {
+    box-sizing: border-box;
+}
