@@ -1,5 +1,10 @@
 .counter {
     padding: 2rem;
-    font-family: 'Eina01';
+    font-family: Eina01, sans-serif;
     font-size: 2rem;
+}
+
+.test {
+    color: blue;
+    display: block;
 }
