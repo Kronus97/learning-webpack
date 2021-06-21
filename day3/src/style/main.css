@@ -3,7 +3,10 @@
     src: url('./fonts/Eina01-Regular.ttf');
 }
 
-body, div, span, input {
+body,
+div,
+span,
+input {
     margin: 0;
     padding: 0;
 }
