@@ -1,16 +1,16 @@
-const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const path = require('path')
+const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.[contenthash].js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: ''
+        publicPath: '',
     },
     mode: 'none',
     module: {
@@ -22,24 +22,22 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
+                            outputPath: 'fonts/',
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(png|jpg)$/,
-                type: 'asset/resource'
+                type: 'asset/resource',
             },
             {
                 test: /\.(svg)$/,
-                type: 'asset/inline'
+                type: 'asset/inline',
             },
             {
                 test: /\.(css)$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader'
-                ]
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.(js)$/,
@@ -48,26 +46,26 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/env'],
-                        plugins: ['@babel/plugin-proposal-class-properties']
-                    }
-                }
-            }
-        ]
+                        plugins: ['@babel/plugin-proposal-class-properties'],
+                    },
+                },
+            },
+        ],
     },
     plugins: [
         new TerserPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'styles.[contenthash].css'
+            filename: 'styles.[contenthash].css',
         }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: 'Second day of webpack',
             filename: 'index.html',
             meta: {
-                description: 'This is my progress with webpack on the second day'
+                description: 'This is my progress with webpack on the second day',
             },
-            template: 'index.html'
+            template: 'index.html',
         }),
-        new FaviconsWebpackPlugin(path.resolve(__dirname, './src/static/images/cool-sun.png'))
-    ]
+        new FaviconsWebpackPlugin(path.resolve(__dirname, './src/static/images/cool-sun.png')),
+    ],
 }
