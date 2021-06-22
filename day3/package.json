@@ -6,8 +6,9 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack && prettier --write dist/index.html",
-        "prepare": "cd .. && husky install day3/.husky"
+        "build": "webpack --config webpack.production.config.js && prettier --write dist/index.html",
+        "prepare": "cd .. && husky install day3/.husky",
+        "dev": "webpack serve --open --config webpack.dev.config.js"
     },
     "lint-staged": {
         "*.js": [
@@ -45,6 +46,7 @@
         "stylelint-order": "^4.1.0",
         "terser-webpack-plugin": "^5.1.3",
         "webpack": "^5.39.1",
-        "webpack-cli": "^4.7.2"
+        "webpack-cli": "^4.7.2",
+        "webpack-dev-server": "^3.11.2"
     }
 }
